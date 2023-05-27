@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Estilos gerais */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+/* Estilos para a barra de status */
+@media (display-mode: standalone) {
+  /* Estilos aplicados quando o site está em modo de tela cheia no iOS */
+  /* Por exemplo, você pode definir a cor de fundo da barra de status */
+  body {
+    background-color: #fee500;
+  }
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Altura desejada para o cabeçalho */
+    background-color: #ffffff; /* Cor de fundo desejada */
+    z-index: 999; /* Certifique-se de que o cabeçalho esteja acima dos outros elementos */
+  }
+  
+  #logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: black; /* Cor do texto */
+    background-color: yellow; /* Cor de fundo */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    overflow: hidden;
+  }
+
+  .fixed-button:hover {
+    color: white; /* Cor do texto ao passar o mouse */
+  background-color: black; /* Cor de fundo ao passar o mouse */ /* Nova cor ao passar o mouse */
+  }
+
+  .fixed-button:active {
+    transform: scale(1.1); /* Efeito de escala ao clicar */
+  }
+
+  .fixed-button::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3); /* Cor do efeito de ripple */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .fixed-button:active::after {
+    opacity: 1; /* Mostrar o efeito de ripple ao clicar */
+  }
